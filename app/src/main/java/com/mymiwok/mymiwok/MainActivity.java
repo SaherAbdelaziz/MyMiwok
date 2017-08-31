@@ -15,23 +15,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Find the View that shows the numbers category
         TextView numbers = (TextView) findViewById(R.id.category_numbers);
-        NewIntent(numbers);
-
-        TextView colors = (TextView) findViewById(R.id.category_colors);
-        NewIntent(colors);
-
-        TextView family = (TextView) findViewById(R.id.category_family);
-        NewIntent(family);
-
-        TextView pharses = (TextView) findViewById(R.id.category_phrases);
-        NewIntent(pharses);
-
-
-    }
-
-    void NewIntent(View view){
         // Set a click listener on that View
-        view.setOnClickListener(new View.OnClickListener() {
+        numbers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(MainActivity.this, NumbersActivity.class);
@@ -40,5 +25,44 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(myIntent);
             }
         });
+
+        TextView colors = (TextView) findViewById(R.id.category_colors);
+        // Set a click listener on that View
+        colors.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(MainActivity.this, ColorsActivity.class);
+
+                // Start the new activity
+                startActivity(myIntent);
+            }
+        });
+
+        TextView family = (TextView) findViewById(R.id.category_family);
+        // Set a click listener on that View
+        family.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(MainActivity.this, FamilyActivity.class);
+
+                // Start the new activity
+                startActivity(myIntent);
+            }
+        });
+
+        TextView pharses = (TextView) findViewById(R.id.category_phrases);
+        // Set a click listener on that View
+        pharses.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(MainActivity.this, PhrasesActivity.class);
+
+                // Start the new activity
+                startActivity(myIntent);
+            }
+        });
+
+
     }
+
 }
