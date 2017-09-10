@@ -9,22 +9,26 @@ public class Word {
     private String mDefaultTranslation ;
     private String mMiwokTranslation ;
     private int    mImageID = notValidImage ;
+    private int    mAudioID ;
     private static final int  notValidImage = -1 ;
+
     public Word(){
 
     }
 
-    public Word(String DefaultTranslation , String MiwokTranslation){
+    public Word(String DefaultTranslation , String MiwokTranslation , int AudioID){
 
         mDefaultTranslation = DefaultTranslation ;
         mMiwokTranslation = MiwokTranslation ;
+        mAudioID = AudioID ;
     }
 
-    public Word(String DefaultTranslation , String MiwokTranslation , int ImageID){
+    public Word(String DefaultTranslation , String MiwokTranslation , int ImageID , int AudioID){
 
         mDefaultTranslation = DefaultTranslation ;
         mMiwokTranslation = MiwokTranslation ;
         mImageID = ImageID ;
+        mAudioID = AudioID ;
     }
 
     public  String getDefaultTranslation(){
@@ -41,5 +45,23 @@ public class Word {
 
     public boolean hasImage(){
         return mImageID != notValidImage ;
+    }
+
+    public int getAudioID() {
+        return mAudioID;
+    }
+
+    public void setAudioID(int mAudioID) {
+        this.mAudioID = mAudioID;
+    }
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mDefaultTranslation='" + mDefaultTranslation + '\'' +
+                ", mMiwokTranslation='" + mMiwokTranslation + '\'' +
+                ", mImageID=" + mImageID +
+                ", mAudioID=" + mAudioID +
+                '}';
     }
 }
